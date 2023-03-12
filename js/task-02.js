@@ -10,17 +10,17 @@ const ingredients = [
 const ingredientsList = document.querySelector('#ingredients')
 
 const appendIngredients = ingredients => {
-  const append = []
+  const appendItems = []
 
   ingredients.forEach(el => {
     const ingredient = document.createElement('li');
     ingredient.textContent = el;
     ingredient.classList.add('item')
-    append.push(ingredient)
+    appendItems.push(ingredient)
     
   })
 
-  return ingredientsList.append(...append)
+  return ingredientsList.append(...appendItems)
 }
 
 appendIngredients(ingredients);
