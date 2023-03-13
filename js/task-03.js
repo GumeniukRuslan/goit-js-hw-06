@@ -23,7 +23,7 @@ const makeGallery = images => {
     imgContent.alt = img.alt;
     imgContent.width = 300;
     imgContent.height = 190;     
-    imgContent.style.boxShadow = 'rgba(149, 157, 165, 0.2) 0px 12px 24px';
+    imgContent.style.boxShadow = 'rgba(149, 157, 165, 1.5) 0px 12px 24px';
     item.append(imgContent);
 
     return item;
