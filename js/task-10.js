@@ -26,8 +26,10 @@ function createBoxes(amount) {
   return resultBox.append(...boxesToAppend);
 }
 
+function destroyBoxes() {
+   resultBox.innerHTML = '';
+    inputValue.value = '';  
+}
+
 createBtn.addEventListener('click', () => createBoxes(inputValue.value));
-destroyBtn.addEventListener('click', () => {
-  resultBox.innerHTML = '';
-  inputValue.value = '';
-});
+destroyBtn.addEventListener('click', () => destroyBoxes());

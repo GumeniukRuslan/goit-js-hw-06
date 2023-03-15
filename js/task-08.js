@@ -9,9 +9,11 @@ formEl.addEventListener('submit', event => {
   if (!emailInput.value || !passInput.value) {
     return alert('Всі поля повинні бути заповнені!')
   }
-  const userData = {};
-  userData.email = emailInput.value;
-  userData.password = passInput.value;
+  const userData = {
+    email: emailInput.value,
+    password: passInput.value,
+  };
+  
   console.log(userData);
   formEl.reset();
 })

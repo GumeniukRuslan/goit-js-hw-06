@@ -17,7 +17,6 @@ const appendIngredients = ingredients => {
     ingredient.textContent = el;
     ingredient.classList.add('item')
     appendItems.push(ingredient)
-    
   })
 
   return ingredientsList.append(...appendItems)

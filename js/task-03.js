@@ -15,26 +15,33 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
-const makeGallery = images => {
-  return images.map(img => {
-    const item = document.createElement('li')
-    const imgContent = document.createElement('img')
-    imgContent.src = img.url;
-    imgContent.alt = img.alt;
-    imgContent.width = 300;
-    imgContent.height = 190;     
-    imgContent.style.boxShadow = 'rgba(149, 157, 165, 1.5) 0px 12px 24px';
-    item.append(imgContent);
+const makeImg = img => {
+  return `<li><img src=${img.url} alt=${img.alt} width=300 height=190 style="box-shadow: rgb(149, 157, 165) 0px 12px 24px;"><li>`
+}
 
-    return item;
-  })
-};
+const makeGallery = images.map(makeImg).join('');
 
-const imagesToAppend = makeGallery(images);
-gallery.append(...imagesToAppend)
+gallery.insertAdjacentHTML('beforeend', makeGallery)
 
 gallery.style.listStyle = 'none';
 gallery.style.display = 'flex';
 gallery.style.justifyContent = 'space-around';
 gallery.style.padding = 0;
 
+// const makeGallery = images => {
+//   return images.map(img => {
+//     const item = document.createElement('li')
+//     const imgContent = document.createElement('img')
+//     imgContent.src = img.url;
+//     imgContent.alt = img.alt;
+//     imgContent.width = 300;
+//     imgContent.height = 190;     
+//     imgContent.style.boxShadow = 'rgba(149, 157, 165, 1.5) 0px 12px 24px';
+//     item.append(imgContent);
+
+//     return item;
+//   })
+// };
+
+// const imagesToAppend = makeGallery(images);
+// gallery.append(...imagesToAppend)
