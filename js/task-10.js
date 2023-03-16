@@ -11,6 +11,7 @@ const destroyBtn = controls.querySelector('[data-destroy]');
 const resultBox = document.querySelector('#boxes');
 
 function createBoxes(amount) {
+  resultBox.innerHTML = '';
   if (inputValue.value > 100 || inputValue.value < 1) {
     return alert('Введіть число від 1 до 100!');
   }
